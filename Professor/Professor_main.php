@@ -1,23 +1,65 @@
-?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professor</title>
+    <link rel="stylesheet" href="Professor_main.css">
 </head>
 
-    <img id="image1" src="ceid_logo_tr.png" width="370" height="75" alt="Τμήμα Μηχανικών Η/Υ και Πληροφορικής">
-
+    <div class="image-wrapper">
+      <div class="decor-left"></div>
+        <img id="image1" src="Diplomatica.png" width="180" height="180" alt="Diplomatica" />
+      <div class="decor-right"></div>
+    </div>
+  <img id="image2" src="ceid_logo_tr.png" width="370" height="75" alt="Τμήμα Μηχανικών Η/Υ και Πληροφορικής">
 <body>
-  <h1>Diplomatica</h1>
+  
+<h1 class="welcome-text">Καλώς όρισες, ... !</h1>
 
-  <a href="...php">Προβολή και Δημιουργία θεμάτων προς ανάθεση</a><br>
-  <a href="...php">Αρχική ανάθεση θέματος σε φοιτητή</a><br>
-  <a href="...php">Προβολή λίστας διπλωματικών</a><br>
-  <a href="...php">Προβολή προσκλήσεων συμμετοχής σε τριμελή</a><br>
-  <a href="...php">Προβολή στατιστικών</a><br>
-  <a href="...php">Διαχείριση διπλωματικών εργασιών</a><br>
+ <div class="welcome-box">
+    <p>🎓 Καλωσορίσατε στην Diplomatica!!<br><br>
+      Εδώ μπορείτε εύκολα και γρήγορα να διαχειριστείτε την πορεία της διπλωματικής σας εργασίας.<br>
+      Ανανεώστε τα προσωπικά σας στοιχεία, καταχωρήστε ή επεξεργαστείτε το θέμα σας, και παρακολουθήστε την πρόοδο της υποβολής.<br><br>
+      👉 Η διαδικασία είναι απλή, ασφαλής και οργανωμένη — γιατί η εργασία σας αξίζει το καλύτερο περιβάλλον παρουσίασης.<br><br>
+      Καλή επιτυχία!
+    </p>
+  </div>
+  
+   <div id="sidebar1" class="sidebar1">
+    <div class="sidebar-icon" title="Μενού ☰">☰</div>
+    <ul>
+      <li><a href="SHOW&CREATE SUBJECTS TO GIVE/show&createsybjectstogive.php">Προβολή και Δημιουργία θεμάτων προς ανάθεση</a></li>
+      <li><a href="START TO GIVE SUB TO STUDENT/starttogivesubjtostudent.php">Αρχική ανάθεση θέματος σε φοιτητή</a></li>
+      <li><a href="DIPLOMATIC LIST/diplomaticslist.php">Προβολή λίστας διπλωματικών</a></li>
+      <li><a href="invitationstoparticipateinCommittee/invitationstoparticipateinCommittee.php">Προβολή προσκλήσεων συμμετοχής σε τριμελή Επιτροπή</a></li>
+      <li><a href="show statistics/showstatistics.php">Προβολή στατιστικών</a></li>
+      <li><a href="Diplomaticworkmanagement/Diplomaticworkmanagement.php">Διαχείριση διπλωματικών εργασιών</a></li>
+    </ul>
+    
+    <div class="clock-container">
+      <div id="clock-time" class="clock-time"></div>
+      <div id="clock-date" class="clock-date"></div>
+    </div>
+
+    <a href="../Login/Login.html" class="logout-link">🚪 Αποσύνδεση</a>
+    
+  </div>
+
+
+   <div id="logoutPopup" class="popup-overlay">
+    <div class="popup-box">
+      <h2>Αποσύνδεση</h2>
+      <p>Είστε σίγουρος/η ότι θέλετε να αποσυνδεθείτε;</p>
+      <div class="popup-buttons">
+        <button id="confirmLogout">Ναι</button>
+        <button id="cancelLogout">Όχι</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="Professor_main.js"></script>
+
 
   
 </body>

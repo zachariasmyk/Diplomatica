@@ -1,0 +1,79 @@
+<?php include '../database.php'; ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Subjects To Show/Give </title>
+    <link rel="stylesheet" href="show&createsybjectstogive.css">
+</head>
+<div class="image-wrapper">
+      <div class="decor-left"></div>
+        <img id="image1" src="Diplomatica.png" width="180" height="180" alt="Diplomatica" />
+      <div class="decor-right"></div>
+    </div>
+  <img id="image2" src="ceid_logo_tr.png" width="370" height="75" alt="Τμήμα Μηχανικών Η/Υ και Πληροφορικής">
+<body>
+    <div id="sidebar1" class="sidebar1">
+    <div class="sidebar-icon" title="Μενού ☰">☰</div>
+    <ul>
+       
+      <li><a href="../../Professor/Professor_main.php">Αρχική Σελίδα</a></li>
+      <li><a href="../START TO GIVE SUB TO STUDENT/starttogivesubjtostudent.php">Αρχική ανάθεση θέματος σε φοιτητή</a></li>
+      <li><a href="../DIPLOMATIC LIST/diplomaticslist.php">Προβολή λίστας διπλωματικών</a></li>
+      <li><a href="../invitationstoparticipateinCommittee/invitationstoparticipateinCommittee.php">Προβολή προσκλήσεων συμμετοχής σε τριμελή Επιτροπή</a></li>
+      <li><a href="../show statistics/showstatistics.php">Προβολή στατιστικών</a></li>
+      <li><a href="../Diplomaticworkmanagement/Diplomaticworkmanagement.php">Διαχείριση διπλωματικών εργασιών</a></li>
+    </ul>
+    
+    <div class="clock-container">
+      <div id="clock-time" class="clock-time"></div>
+      <div id="clock-date" class="clock-date"></div>
+    </div>
+
+    <a href="Login/Login.html" class="logout-link">🚪 Αποσύνδεση</a>
+    
+  </div>
+
+
+   <div id="logoutPopup" class="popup-overlay">
+    <div class="popup-box">
+      <h2>Αποσύνδεση</h2>
+      <p>Είστε σίγουρος/η ότι θέλετε να αποσυνδεθείτε;</p>
+      <div class="popup-buttons">
+        <button id="confirmLogout">Ναι</button>
+        <button id="cancelLogout">Όχι</button>
+      </div>
+    </div>
+  </div>
+
+
+ 
+
+<div class="button-container1">
+  
+ <button id="showTopicsBtn" class="custom-button1">Προβολή Θεμάτων Διπλωματικής</button>
+  <button class="custom-button1" onclick="window.location.href='create_subject/create_subject.php'">Δημιουργία Θεμάτων Διπλωματικής</button>
+  <div id="topics" class="grid hidden">
+      <?php
+        $sql = "SELECT * FROM themata where  professor_id=1";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()) {
+            echo "<div class='card'><p>" . htmlspecialchars($row['titlos']) . "</p></div>";
+          }
+        } else {
+          echo "<p>Δεν υπάρχουν θέματα.</p>";
+        }
+      ?>
+    </div>
+  </div>
+  
+
+
+  
+  <script src="show&createsybjectstogive.js"></script>
+
+    
+</body>
+</html>

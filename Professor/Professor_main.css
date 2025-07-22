@@ -1,0 +1,248 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  background: #f9f9f9;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #263238;
+}
+
+.image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px; 
+  margin-bottom: 30px;
+}
+
+.decor-left,
+.decor-right {
+  width: 500px;
+  height: 10px;
+  background: linear-gradient(180deg, #80cbc4, #004d40);
+  border-radius: 10px;
+}
+
+#image2 {
+    position: absolute;
+    top: 20px;   
+    left: 20px; 
+    width: 370px; 
+    height: 75px;
+    z-index: 2;
+    padding: 8px 15px;
+    border-radius: 6px;
+    display: inline-block; 
+}
+
+.welcome-text {
+  margin-top: 12px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #004d40;
+  text-align: center;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.welcome-box {
+  max-width: 800px;
+  background: #e0f2f1;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #004d40;
+  margin: 40px auto;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.welcome-box:hover {
+  transform: scale(1.01);
+}
+
+.sidebar1 {
+  position: fixed;
+  top: 200px;
+  left: 0;
+  width: 60px;
+  height: 600px;
+  background: linear-gradient(135deg, #00897b, #004d40); 
+  padding: 25px 30px;
+  border-radius: 20px; 
+  box-shadow: 0 8px 20px rgba(0, 77, 64, 0.4); 
+  z-index: 999;
+  visibility: visible;
+  color: #e0f2f1;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 18px;
+  transition: background 0.3s ease;
+}
+
+
+.sidebar-icon {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.sidebar1:hover {
+  width: 260px; /* Πλήρες πλάτος όταν ο χρήστης κάνει hover */
+}
+
+.sidebar1 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+ 
+}
+
+.sidebar1 li {
+  margin: 0;
+}
+
+.sidebar1 ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  white-space: nowrap; /* για να μην σπάει το κείμενο */
+  
+  /* Κρύβουμε το κείμενο με max-width και overflow όταν δεν είναι hover */
+  max-width: 0;
+  overflow: hidden;
+  transition: max-width 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+.sidebar1 a {
+  color: #b2dfdb;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar1:hover ul li a {
+  max-width: 2500px; /* αρκετό για να εμφανιστεί το κείμενο */
+  opacity: 1;
+}
+
+.sidebar1 .logout-link {
+  color: #ff504d !important; /* Κόκκινο με προτεραιότητα */
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  text-align: center;
+  margin-top: auto;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.clock-container,
+.logout-link {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+/* Όταν το sidebar είναι hover, εμφανίζονται */
+.sidebar1:hover .clock-container,
+.sidebar1:hover .logout-link {
+  opacity: 1;
+  max-height: 100px; /* αρκετό για να φαίνεται */
+  overflow: visible;
+}
+
+
+.logout-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(38, 50, 56, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-box {
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 14px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.popup-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.popup-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+#confirmLogout {
+  background-color: #d32f2f;
+  color: white;
+}
+
+#confirmLogout:hover {
+  background-color: #b71c1c;
+}
+
+#cancelLogout {
+  background-color: #b0bec5;
+  color: #263238;
+}
+
+#cancelLogout:hover {
+  background-color: #90a4ae;
+}
+
+
+.clock-time {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 4px;
+}
+
+.clock-date {
+  font-size: 14px;
+  color: #b2dfdb;
+  font-family: 'Courier New', monospace;
+}
